@@ -7,7 +7,7 @@ import {
 import { fahrenheitToCelsius, mphToKph } from "~utils";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import defaultIcon from "~assets/default-icon.png";
+import { defaultIcon } from "~assets/index";
 
 const Weather = () => {
   const [data, setData] = useState({});
