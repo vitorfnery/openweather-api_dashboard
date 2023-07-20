@@ -98,8 +98,6 @@ h1 {
   font-weight: 700;
 }
 
-
-
 .error {
   font-size: 1.6rem;
   font-weight: 600;
@@ -148,3 +146,29 @@ h1 {
 
 
 
+@media (max-width: 420px)
+{
+  h1 {
+    font-size: 4rem;
+  }
+
+  .humidity p,
+  .wind p,
+  .feels p {
+   margin-top: 0.5rem;
+   font-size: 0.8rem;
+   font-weight: 500;
+   color: #fff;
+}
+
+  .humidity .bold,
+  .wind .bold,
+  .feels .bold {
+   font-size: 1rem;
+   font-weight: 700;
+}
+
+  .temperature-icon img {
+     width: 30%;
+  }
+}
