@@ -65,13 +65,23 @@ const Weather = () => {
             <div className="location">
               <p>{data.name}</p>
             </div>
-            <div className="temp">
-              {data.main && (
-                <h1>
-                  {fahrenheitToCelsius(data.main.temp).toFixed(1)}
-                  {celsius}
-                </h1>
-              )}
+            <div>
+              <div>
+                {data.main && (
+                  <h1>
+                    {fahrenheitToCelsius(data.main.temp).toFixed(1)}
+                    {celsius}
+                  </h1>
+                )}
+              </div>
+              <div className="temperature-icon">
+                {data.main && (
+                  <img
+                    src={getTemperatureIcon(data.main.temp.toFixed())}
+                    alt="Temperature Icon"
+                  />
+                )}
+              </div>
             </div>
             <div className="description">
               {data.weather && <p>{data.weather[0].main}</p>}
@@ -89,7 +99,12 @@ const Weather = () => {
                 <p>{feels}</p>
               </div>
               <div className="humidity">
-                {data.main && <p className="bold">{data.main.humidity}%</p>}
+                {data.main && (
+                  <p className="bold">
+                    {data.main.humidity}
+                    {percentage}
+                  </p>
+                )}
                 <p>{humidity}</p>
               </div>
               <div className="wind">
@@ -103,14 +118,6 @@ const Weather = () => {
               </div>
             </div>
           )}
-          <div className="temperature-icon">
-            {data.main && (
-              <img
-                src={getTemperatureIcon(data.main.temp.toFixed())}
-                alt="Temperature Icon"
-              />
-            )}
-          </div>
         </div>
       )}
     </div>
