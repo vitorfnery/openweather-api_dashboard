@@ -4,9 +4,9 @@ import {
   FETCH_ERRORS,
   WEATHER_INFO,
 } from "~/constants";
+import { fahrenheitToCelsius, mphToKph } from "~utils";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 import defaultIcon from "~assets/default-icon.png";
 
 const Weather = () => {
@@ -45,14 +45,6 @@ const Weather = () => {
       clearInterval(intervalId);
     };
   }, [apiUrl]);
-
-  const fahrenheitToCelsius = (fahrenheit) => {
-    return (fahrenheit - 32) * (5 / 9);
-  };
-
-  const mphToKph = (mph) => {
-    return mph * 1.60934;
-  };
 
   const getTemperatureIcon = (temperature) => {
     for (const range of temperatureRanges) {
