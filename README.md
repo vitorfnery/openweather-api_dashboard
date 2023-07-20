@@ -1,4 +1,4 @@
-# Weather Dashboard - React 📈🖥️📊💻
+# Weather Dashboard - React 🌦️🌧️🌬️🌞
 
 ![preview](./.github/preview.png)
 
